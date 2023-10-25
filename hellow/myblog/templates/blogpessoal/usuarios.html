@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="stylesheet" href="{% static './css/typography.css' %}">
+    <link rel="stylesheet" href="{% static './css/utilities.css' %}">
+    <link rel="stylesheet" href="{% static './css/Llistas.css' %}">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+
+		
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+      
+        <span class="nav-title">Blog do Pedro</span>
+        <a class="button" href="{% url 'formsview' %}">
+          <span class="button-text">Contact Me</span>
+        </a>
+        <a class="button" href="{% url 'listar_usuario' %}">
+          <span class="button-text">usuarios</span>
+        </a>
+      
+    </div>
+
+    <ul>
+        {% for usuario in usuarios %}
+          <a href="{% url 'update_usuario' usuario.id %}">
+            <li>{{usuario.nome}}</li>
+            <li>{{usuario.email}}</li>
+            <li>{{usuario.assunto}}</li>
+            <li>{{usuario.mensagem}}</li>
+
+          </a>
+          <br>
+          <br>
+          {% endfor %}
+    </ul>
+
+    
+</body>
+</html>

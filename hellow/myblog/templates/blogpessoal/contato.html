@@ -1,0 +1,51 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tome contado</title>
+    <link rel="stylesheet" href="{% static './css/forms.css' %}">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="stylesheet" href="{% static './css/typography.css' %}">
+<link rel="stylesheet" href="{% static './css/utilities.css' %}">
+</head>
+<body>
+
+
+	
+
+	
+    <div class="navbar">
+        <a href="{% url 'blogpessoal' %}">
+          <span class="nav-title">Blog do Pedro</span>
+        </a>
+        
+        <a class="button" href="{% url 'formsview' %}">
+          <span class="button-text">Contact Me</span>
+        </a>
+        <a class="button" href="{% url 'listar_usuario' %}">
+          <span class="button-text">usuarios</span>
+        </a>
+      
+    </div>
+
+
+    <form class="formulario" method="POST" action="{% url 'processa_forms' %}" > {% csrf_token %}
+          
+        {{form}}
+      
+        <input type="submit" value="Enviar Dados" class="btn-submit">
+      
+      </form>
+
+      {% if usuarioatt %}
+      <a href="{% url 'delete_usuario' usuarioatt.id %}"> Deletar</a>
+      {% endif %}
+      
+      
+      
+    
+</body>
+</html>

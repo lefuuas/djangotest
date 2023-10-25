@@ -1,0 +1,28 @@
+ul {
+    list-style-type: none; /* Removendo os marcadores padrão da lista */
+    padding: 0;
+  }
+  
+  /* Estilo para cada item da lista (li) */
+  li {
+    margin: 5px 20px; /* Espaçamento entre os itens da lista */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #fafafa;
+  }
+  
+  /* Estilo para os links dentro dos itens da lista */
+  li a {
+    text-decoration: none; /* Removendo sublinhado dos links */
+    color: #fafafa; /* Cor do link (azul em hexadecimal) */
+    display: block; /* Faz o link ocupar toda a largura do item da lista */
+  }
+  
+  /* Estilo para os links quando passam o mouse por cima */
+  li a:hover {
+    color: #0056b3; /* Cor alterada ao passar o mouse (azul mais escuro) */
+  }
+  
+  /* Espaçamento entre as sequências de lista */
+  ul + ul {
+    margin-top: 20px;
+  }
